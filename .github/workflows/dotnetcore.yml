@@ -19,8 +19,8 @@ jobs:
         with:
           dotnet-version: 3.1.100
 
-      - name: Run
-        run: dotnet run --project TodoBasic/Todos.csproj
+#      - name: Run
+#        run: dotnet run --project TodoBasic/Todos.csproj
   test:
     runs-on: ubuntu-latest
 
