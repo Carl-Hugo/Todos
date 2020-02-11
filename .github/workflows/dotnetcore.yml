@@ -20,7 +20,7 @@ jobs:
         dotnet-version: 3.1.100
       
     - name: Run
-      run: dotnet run TodoBasic/Todos.csproj
+      run: dotnet run --project TodoBasic/Todos.csproj
       
     - name: Test
       uses: matt-ball/newman-action@master
