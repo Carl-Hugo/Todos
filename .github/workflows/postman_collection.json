@@ -1,0 +1,165 @@
+{
+  "info": {
+    "_postman_id": "f556f2d1-e474-4a25-8521-6d79d67eadb7",
+    "name": "David Fowler's TODOs API",
+    "description": "Defines all the TODOs API endpoints, in order for Postman Runner to execute them all in batch.\n\nThe code is: https://github.com/davidfowl/Todos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "7da9892a-70d8-4096-939a-2d5fe931f1b8",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5004/api/todos",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5004",
+          "path": ["api", "todos"]
+        },
+        "description": "Read all TODOs."
+      },
+      "response": []
+    },
+    {
+      "name": "Create",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "47966347-e5f5-4e27-a8a8-a42825d74aa4",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\": 1,\n\t\"name\": \"Todo 1\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5004/api/todos",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5004",
+          "path": ["api", "todos"]
+        },
+        "description": "Create a TODO item under `id=1`."
+      },
+      "response": []
+    },
+    {
+      "name": "Get One",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "64ad3f2c-5c05-4aa5-bab6-6638f6f322de",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5004/api/todos/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5004",
+          "path": ["api", "todos", "1"]
+        },
+        "description": "Read one TODO, using `id=1`."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete One",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "03e861f8-6327-4e97-af9c-b0e799392f67",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5004/api/todos/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5004",
+          "path": ["api", "todos", "1"]
+        },
+        "description": "Delete a TODO item, using `id=1`."
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "e84ed48f-a6ad-4c75-9d14-f73898766a35",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "66816cb7-6a5b-4ae4-b7ce-f15be605dc99",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
