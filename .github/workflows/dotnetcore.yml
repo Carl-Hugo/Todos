@@ -27,7 +27,7 @@ jobs:
         run: cat .github/workflows/postman_collection.json
 
       - name: Run and test
-        run: (trap 'kill 0' SIGINT; (sleep 5 && echo 'Starting Newman!' && newman run ./.github/workflows/postman_collection.json --insecure; sleep 5; kill 0) & (ASPNETCORE_URLS="https://*:5001" dotnet run --project TodoBasic/Todos.csproj))
+        run: (trap 'kill 0' SIGINT; (sleep 10 && echo 'Starting Newman!' && newman run ./.github/workflows/postman_collection.json --insecure; kill 0 %) & (ASPNETCORE_URLS="https://*:5001" dotnet run --project TodoBasic/Todos.csproj))
       # - name: Run
       #   run: dotnet build TodoBasic/Todos.csproj #dotnet run --project TodoBasic/Todos.csproj
       # - name: Test
