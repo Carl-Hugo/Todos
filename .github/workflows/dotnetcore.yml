@@ -22,7 +22,7 @@ jobs:
     needs: setup
     steps:
       - name: Run
-        run: echo 'Hello World!' #dotnet run --project TodoBasic/Todos.csproj
+        run: dotnet build baTodoBasic/Todos.csproj #dotnet run --project TodoBasic/Todos.csproj
   test:
     runs-on: ubuntu-latest
     needs: setup
@@ -31,5 +31,5 @@ jobs:
         uses: matt-ball/newman-action@master
       #        with:
       #          collection: .github/workflows/postman_collection.json
-      - name: Current directory
-        run: echo $PWD
+      - name: Collection content
+        run: cat postman_collection.json
