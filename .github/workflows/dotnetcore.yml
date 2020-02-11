@@ -13,16 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.100
-      
-    - name: Run
-      run: dotnet run --project TodoBasic/Todos.csproj
-      
-    - name: Test
-      uses: matt-ball/newman-action@master
-      with:
-        collection: .github/workflows/postman_collection.json
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.100
+
+      - name: Run
+        run: dotnet run --project TodoBasic/Todos.csproj
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test
+        uses: matt-ball/newman-action@master
+        with:
+          collection: .github/workflows/postman_collection.json
