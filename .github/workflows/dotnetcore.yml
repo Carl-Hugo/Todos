@@ -27,7 +27,7 @@ jobs:
         run: cat .github/workflows/postman_collection.json
 
       - name: Run and test
-        run: (trap 'kill 0' SIGINT; (newman run ./.github/workflows/postman_collection.json; kill 0 %) & (dotnet run --project TodoBasic/Todos.csproj))
+        run: (trap 'kill 0' SIGINT; (newman run ./.github/workflows/postman_collection.json; kill 0) & (dotnet run --project TodoBasic/Todos.csproj))
       # - name: Run
       #   run: dotnet build TodoBasic/Todos.csproj #dotnet run --project TodoBasic/Todos.csproj
       # - name: Test
